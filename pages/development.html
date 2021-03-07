@@ -1,27 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Development</title>
-    <link rel="stylesheet" href="../css/development.css">
+    <link rel="stylesheet" href="../css/development.css" />
+  </head>
+  <body>
+    <!----------------------------NAV--------------------------------->
+    <div class="nav" id="nav">
+      <a href="../pages/index.html" class="link">Home</a>
+      <a href="../pages/academy.html" class="link">Academy</a>
+      <a href="../pages/development.html" class="link">Development</a>
+      <a href="../pages/contact.html" class="link">Contact</a>
+    </div>
+    <!----------------------------NAV--------------------------------->
 
-</head>
-<body>
-<!----------------------------NAV--------------------------------->
-<div class="nav" id="nav">
-    <a href="../pages/index.html" class="link">Home</a>
-    <a href="../pages/academy.html" class="link">Academy</a>
-    <a href="../pages/development.html" class="link">Development</a>
-    <a href="../pages/contact.html" class="link">Contact</a>
-  </div>
-<!----------------------------NAV--------------------------------->
-
-
+    <section>
+      <div class="bg"></div>
+      <h1>
+        Lazy-loading offscreen images using Intersection Observer API<br />
+        <p>
+          07 March, 2021 <br />
+          Quintin Kelly Dekker
+        </p>
+      </h1>
+      <p></p>
+    </section>
+    <section>
+      <div class="bg"></div>
+      <h1>
+        Lazy loading is a technique that loads content or media only when it is
+        needed or it is in the viewport. For images, this is usually called
+        off-screen images. When the user gets close to an image, the browser
+        loads the image instead of loading it when the user lands on the page.
+      </h1>
+    </section>
+    <section>
+      <div class="bg"></div>
+      <h1>
+        Using images in your website slows down its performance. This gets worse
+        if you have many images on your web page. Users are impatient and most
+        leave a site immediately if it takes more than 5 seconds to load. How
+        can we solve this issue regardless of how many images we use on a web
+        page? Lazy loading is a technique that loads content or media only when
+        it is needed or it is in the viewport. For images, this is usually
+        called off-screen images. When the user gets close to an image, the
+        browser loads the image instead of loading it when the user lands on the
+        page. This lets the page load much faster because it only needs to load
+        images that are currently in view. To achieve this, we set the src of an
+        img to data-src. When the browser gets to the image, it sees no src and
+        ignores the image instead. Later, when we add src to the image, the
+        browser starts downloading that image. So when the image gets close to
+        the viewport, we simply set the src of an image to the data-src value:
+        <br />
+        <b
+          >const image = document.querySelector('.myImg');
+          image.setAttribute('src', image.getAttribute('data-src');</b
+        >
+      </h1>
+    </section>
+    <section>
+      <div class="bg"></div>
+      <h1>
+        That’s great, but how do we know when the image is in the viewport?
+        Intersection Observer API Using the Intersection Observer API, we can
+        observe images that have an attribute of data-src. Using a threshold, we
+        can detect if an image comes into the viewport, and then run a callback
+        in which we assign the image's data-src to it's src. Then inside that
+        callback, we tell the observer to stop observing that image. First, we
+        set up the observer:<br />
+        <b
+          >const imageObs = new IntersectionObserver((entries, observer) => { //
+          handle entries }, { // options });</b
+        >
+      </h1>
+    </section>
+    <section>
+      <div class="bg"></div>
+      <h1>
+        The Intersection Observer takes 2 arguments. The first is a callback
+        function, which receives a list of entry objects and the observer
+        itself, and the second is an object of options. In the callback
+        function, we loop through all the entries and check if that entry is in
+        the viewport:<br />
+        <b>entries.forEach(entry => { if(entry.isIntersecting) { } });</b>
+      </h1>
+    </section>
+    <section>
+      <div class="bg"></div>
+      <h1>
+        Inside, we get a reference to the image’s DOM node from the entry. And
+        we set the image’s src to the image's data-src. const target =
+        entry.target; target.src = target.getAttribute('data-src');
+      </h1>
+    </section>
+    <section>
+      <div class="bg"></div>
+      <h1>
+        We then add a class to the image when it has loaded, and tell the
+        observer to stop observing the image. The loaded class is useful when
+        you want to animate in the image once it enters the viewport and it is
+        loaded:<br> 
+        <b>target.onload = () => { target.classList.add('loaded');
+        observer.unobserve(target); }</b>
+      </h1>
+    </section>
+    <section>
+      <div class="bg"></div>
+      <h1>
+        In IntersectionObserver’s second argument, we pass an object of options.
+        Here we define a threshold and a rootMargin. The threshold tells the
+        observer to fire when the image is 5% in the viewport. The rootMargin
+        sets an offset for when the observer should fire:<br> 
+        <b>const imageObs = new
+        IntersectionObserver((entries, observer) => { entries.forEach(entry => {
+        if(entry.isIntersecting) { const target = entry.target; target.src =
+        target.getAttribute('data-src'); target.onload = () => {
+        target.classList.add('loaded'); observer.unobserve(target); } } }); }, {
+        threshold: 0.05, rootMargin: '48px' });</b>
+      </h1>
+    </section>
+    <section>
+      <div class="bg"></div>
+      <h1>
+        The Intersection Observer API makes such tasks a whole lot easier today.
+        It is supported in most modern browsers at the time of writing this
+        article. However, it does not support Internet Explorer. There is a
+        polyfill on NPM which implements backward support for the Intersecting
+        Observer in IE. Image lazy-loading has a huge impact on improving your
+        site’s performance. Google’s Lighthouse also recommends deferring
+        offscreen images using the Intersection Observer API.
+      </h1>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js">
-    </script><script src="../javascript/development.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+    <script src="../javascript/development.js"></script>
+  </body>
 </html>

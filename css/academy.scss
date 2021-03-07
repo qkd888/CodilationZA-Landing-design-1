@@ -50,7 +50,7 @@ body {
 
 #content {
     background-color: $bronze;
-    padding: 2em 20em;
+    padding: 35em 20em;
 
     h1 {
         color: black;
@@ -69,6 +69,7 @@ body {
         top: 0;
         left: 0;
         border-radius: 10px;
+        margin-top: 1em;
     }
 
     #img-2 {
@@ -138,10 +139,18 @@ body {
 
 .first-section {
     padding: 50px 0 20px 0;
-    background-color: #506578;
+    background-color: #5065789a;
     border-radius: 25px;
     padding: 1em;
-    box-shadow: 1px 1px 1px .09px #0084ff;
+    box-shadow: 1px 1px 10px .1px #0084ff8d;
+
+}
+
+.first-section:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 15px .1px #0084ff;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .text-header {
@@ -211,3 +220,8 @@ p {
         background-position: 35% bottom;
     }
 }
+
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
