@@ -5,6 +5,8 @@ body {
   font-family: 'Exo 2', sans-serif;
   margin: 0;
   padding: 15em 14em 14em 22em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 img {
