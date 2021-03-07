@@ -1,0 +1,53 @@
+body {
+  background-color: #1d3953;
+  color: black;
+  font-family: 'Exo 2', sans-serif;
+  margin: 0;
+  padding: 15em 14em 14em 22em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.nav {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  background-color: none;
+  top: 0;
+  left: 0;
+}
+
+.nav a {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+  text-decoration: none;
+  color: #4c7d98;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  left: 45em;
+  margin: 1em;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+/*# sourceMappingURL=development.css.map */

@@ -1,0 +1,213 @@
+/*--------------ACADEMY PAGE-------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$bronze: #130d0a;
+$white: #fff;
+$heroHeight: 800px;
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #1d3953;
+    font-family: 'Exo 2', sans-serif;
+    color: $white;
+}
+
+.nav {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: none;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    a {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        text-decoration: none;
+        color: #1a1a1a;
+        justify-content: space-around;
+        left: 45em;
+        margin: 1em;
+        font-weight: bold;
+    }
+
+    a:hover {
+        transform: scale(1.04);
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+#hero {
+    height: $heroHeight;
+    overflow: hidden;
+    position: relative;
+}
+
+#content {
+    background-color: $bronze;
+    padding: 2em 20em;
+
+    h1 {
+        color: black;
+    }
+
+    p {
+        color: black;
+    }
+
+    #img-1 {
+        display: block;
+        position: relative;
+        z-index: 0;
+        height: 80vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+    }
+
+    #img-2 {
+        display: block;
+        position: relative;
+        z-index: 0;
+        height: 70vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+        margin-bottom: 1em;
+    }
+
+    #img-3 {
+        display: block;
+        position: relative;
+        z-index: 0;
+        height: 70vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+        margin-bottom: 1em;
+    }
+
+    #img-4 {
+        display: block;
+        position: relative;
+        z-index: 0;
+        height: 70vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+        margin-bottom: 1em;
+    }
+
+    #img-5 {
+        display: block;
+        position: relative;
+        z-index: 0;
+        height: 50vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+        margin-bottom: 1em;
+    }
+}
+
+.layer {
+    background-position: bottom center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: $heroHeight;
+    position: fixed;
+    z-index: -1;
+}
+
+#hero-mobile {
+    display: none;
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/full_illustration.png") no-repeat center bottom / cover;
+    height: 320px;
+}
+
+.first-section {
+    padding: 50px 0 20px 0;
+    background-color: #506578;
+    border-radius: 25px;
+    padding: 1em;
+    box-shadow: 1px 1px 1px .09px #0084ff;
+}
+
+.text-header {
+    font-size: 50px;
+    text-align: center;
+}
+
+h1 {
+    line-height: 120%;
+    margin-bottom: 30px;
+}
+
+p {
+    color: #ede0d5;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+#hero,
+.layer {
+    min-height: 800px;
+
+
+    h1 {
+        position: absolute;
+        top: 0%;
+        left: 53%;
+        font-size: 50px;
+        padding: 3em;
+        color: black;
+    }
+}
+
+.layer-bg {
+    background-image: url('../images/mathew-schwartz-iGheu30xAi8-unsplash.jpg');
+    width: 50%;
+}
+
+.layer-1 {
+    // background-image: url('https: //s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_03.png');
+    background-position: left bottom;
+}
+
+.layer-2 {
+    // background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_02.png');
+}
+
+.layer-3 {
+    // background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_man.png');
+    background-position: right bottom;
+}
+
+.layer-4 {
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_01.png');
+}
+
+.layer-overlay {
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_overlay.png');
+}
+
+@media only screen and (max-width: 768px) {
+    .layer-1 {
+        background-position: 26% bottom;
+    }
+
+    .layer-3 {
+        background-position: 35% bottom;
+    }
+}
